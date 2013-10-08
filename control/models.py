@@ -9,6 +9,9 @@ class user(models.Model):
     group = models.SmallIntegerField()
     enable = models.SmallIntegerField()
 
+    class Admin:
+        pass
+
 class user_login_history(models.Model):
     ip = models.GenericIPAddressField()
     user = models.CharField(max_length=30)
@@ -31,6 +34,9 @@ class machine(models.Model):
     mem = models.CharField(max_length=100)
     disk = models.CharField(max_length=100)
     network = models.CharField(max_length=100)
+    def __unicode__(self):
+        return (%s %s) % (self.ip, self.desc)
+
 
 class cmd(models.Model):
     cmd = models.CharField(max_length=100)
