@@ -6,6 +6,27 @@ admin.autodiscover()
 
 from control.views import *
 
+from control.models import user
+admin.site.register(user)
+
+from control.models import user_login_history
+admin.site.register(user_login_history)
+
+from control.models import competence
+admin.site.register(competence)
+
+from control.models import machine
+admin.site.register(machine)
+
+from control.models import cmd
+admin.site.register(cmd)
+
+from control.models import cmd_history
+admin.site.register(cmd_history)
+
+
+
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'webadmin.views.home', name='home'),
@@ -21,6 +42,7 @@ urlpatterns = patterns('',
 
 
     url(r'^$', 'control.views.home', name='home'),
-    url(r'^error$/',error),
+    url(r'^error$/', error),
+
 
 )
