@@ -35,7 +35,7 @@ class machine(models.Model):
     disk = models.CharField(max_length=100)
     network = models.CharField(max_length=100)
     def __unicode__(self):
-        return (%s %s) % (self.ip, self.desc)
+        return self.ip
 
 
 class cmd(models.Model):
