@@ -1,0 +1,16 @@
+ {% block content %} 333{{ content }}{% endblock %}
+<table>
+<tr>
+    {% if list %}
+        {% for aa in list %}
+        <td>
+            {{ aa.ip }}
+        </td>
+        {% endfor %}
+    {% else %}
+        <td>
+            no list
+        </td>
+    {% endif %}
+</tr>
+</table>

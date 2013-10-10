@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
+{# This is a comment #}
 {% include "base_head.html" %}
 <body>
-    <h1>My helpful timestamp site</h1>
-    {% block content %}{{ content }}{% endblock %}
-    111
+    <h1>webadmin system</h1>
+    {% block content %} 2222 {{ content }}{% endblock %}
+
+
+
+    {% include "base_list.html" %}
+
+    {% comment %}
+    This is a
+    multi-line comment
+    {% endcomment %}
+
+    {% include "base_footer.html" %}
 </body>
 </html>
