@@ -4,11 +4,10 @@
 {% include "base_head.html" %}
 <body>
     <h1>webadmin system</h1>
-    {% block content %} 2222 {{ content }}{% endblock %}
+    {% block content %} {{ content }}{% endblock %}
+    {% include "base_iplist.html" %}
+    {% include "base_cmdlist.html" %}
 
-
-
-    {% include "base_list.html" %}
 
     {% comment %}
     This is a

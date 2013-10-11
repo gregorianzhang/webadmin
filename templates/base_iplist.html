@@ -1,0 +1,23 @@
+ {% block content %}{{ content }}{% endblock %}
+<table>
+    <tbody>
+
+        {% if iplist %}
+
+            {% for ip in iplist %}
+            <tr>
+                <td>
+                    {{ ip.ip }}<br>
+                </td>
+            {% endfor %}
+            </tr>
+        {% else %}
+        <tr>
+                <td>
+                    no list
+                </td>
+        </tr>
+        {% endif %}
+
+    </tbody>
+</table>

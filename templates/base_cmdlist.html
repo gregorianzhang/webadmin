@@ -1,0 +1,23 @@
+ {% block content %}{{ content }}{% endblock %}
+<table>
+    <tbody>
+        cmdlist
+        {% if cmdlist %}
+
+            {% for cmd in cmdlist %}
+            <tr>
+                <td>
+                    {{ cmd.cmd }}<br>
+                </td>
+            {% endfor %}
+            </tr>
+        {% else %}
+        <tr>
+                <td>
+                    no list
+                </td>
+        </tr>
+        {% endif %}
+
+    </tbody>
+</table>
