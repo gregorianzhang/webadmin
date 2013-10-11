@@ -44,6 +44,8 @@ class cmd(models.Model):
     group_cmd = models.CharField(max_length=100)
     group_cmd_desc = models.CharField(max_length=1024)
     file = models.CharField(max_length=200)
+    def __unicode__(self):
+        return self.cmd
 
 class cmd_history(models.Model):
     ip = models.GenericIPAddressField()
