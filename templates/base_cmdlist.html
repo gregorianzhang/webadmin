@@ -1,6 +1,7 @@
- {% block content %}{{ content }}{% endblock %}
+<div class = "cmdlist">
 <table>
     <tbody>
+
         {% if cmdlist %}
 
             {% for cmd in cmdlist %}
@@ -8,8 +9,9 @@
                 <td>
                     {{ cmd.cmd }}<br>
                 </td>
-            {% endfor %}
+
             </tr>
+            {% endfor %}
         {% else %}
         <tr>
                 <td>
@@ -20,3 +22,4 @@
 
     </tbody>
 </table>
+</div>
