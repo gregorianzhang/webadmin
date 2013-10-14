@@ -1,0 +1,15 @@
+<div id="cmdlist">
+    <ul id="cmd">
+        {% if cmdlist %}
+            {% for cmd in cmdlist %}
+                <li class="cmd {{cmd.cmd}} ">
+                    {{cmd.cmd}}
+                </li>
+            {% endfor %}
+        {% else %}
+        <li>
+            no cmd data
+        </li>
+        {% endif %}
+    </ul>
+</div>

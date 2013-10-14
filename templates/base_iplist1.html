@@ -1,0 +1,15 @@
+<div id="iplist">
+    <ul id="ip">
+        {% if iplist%}
+            {% for ip in iplist %}
+                <li class="ip {{ip.ip}} ">
+                    {{ip.ip}}
+                </li>
+            {% endfor %}
+        {% else %}
+        <li>
+            no ip data
+        </li>
+        {% endif %}
+    </ul>
+</div>
