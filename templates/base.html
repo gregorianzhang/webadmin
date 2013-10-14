@@ -2,11 +2,13 @@
 <html>
 {# This is a comment #}
 {% include "base_head.html" %}
+<input type="button" onclick="command();" value="Do command1">
+<button type="button" onclick="command();">Do command2</button>
 <body>
     <h1>webadmin system</h1>
     {% block content %} {{ content }}{% endblock %}
-    {% include "base_iplist.html" %}
-    {% include "base_cmdlist.html" %}
+    {% include "base_iplist1.html" %}
+    {% include "base_cmdlist1.html" %}
     {% include "base_output.html" %}
 
     {% comment %}
