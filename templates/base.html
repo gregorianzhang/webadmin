@@ -2,10 +2,20 @@
 <html>
 {# This is a comment #}
 {% include "base_head.html" %}
+
+<body>
+
 <input type="button" onclick="command();" value="Do command1">
 <button type="button" onclick="command();">Do command2</button>
-<body>
+<form method="post" action="/ipcmd/" >
+    {% csrf_token %}
+    <input type="text"  value = "ipcmd" name="do" >
+    <input type="button" value="docommand4" onclick="command1();"/>
+
+</form>
+    <input type="submit" value="docommand3" />
     <h1>webadmin system</h1>
+    <div class="ee">
     {% block content %} {{ content }}{% endblock %}
     {% include "base_iplist1.html" %}
     {% include "base_cmdlist1.html" %}
@@ -15,6 +25,7 @@
     This is a
     multi-line comment
     {% endcomment %}
+    </div>
 
     {% include "base_footer.html" %}
 </body>
