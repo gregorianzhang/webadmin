@@ -42,7 +42,8 @@ urlpatterns = patterns('',
 
 
     url(r'^$', 'control.views.home', name='home'),
-    url(r'^error$/', error),
+    url(r'^error/$', error),
+    url(r'^ipcmd/$', ipcmd),
 
 
 )
