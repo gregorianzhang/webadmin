@@ -3,9 +3,28 @@
 
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from control.models import *
 
 
+from django.core.context_processors import  csrf
+from django.views.decorators.csrf import csrf_protect
+
+@csrf_protect
+def ipcmd(request):
+    data = ""
+    if request.method == 'POST':
+        for key in request.POST:
+            print key
+            data = request.POST.getlist(key)
+
+    if data == "":
+        data = "111"
+
+    return HttpResponse(data)
+
+
+@csrf_protect
 def home(request):
     #if request.user.is_authenticated():
     #ip = machine.objects.raw('select * from control_machine')
@@ -17,7 +36,9 @@ def home(request):
 #
     #return HttpResponse(ip)
 
-    return render_to_response("index.html", para)
+    return render_to_response("index.html",
+                              para,
+                              context_instance=RequestContext(request))
     #return HttpResponse("<html>Hello world</html>")
     #else:
     #    return HttpResponseRedirect("/error")
