@@ -37,7 +37,15 @@ $(document).ready(function(){
 
 });
 
+function command1(){
+alert("eeee");
 
+$.post( "/ipcmd/",{ip:ip, cmd:cmd, aa:"abcd"},
+    function(data){
+        alert("aaaaaa ");
+    }
+);
+}
 
     function command(){
         alert(ip);
