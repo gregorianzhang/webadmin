@@ -17,7 +17,7 @@ def ipcmd(request):
         for key in request.POST:
             print key
             data = request.POST.getlist(key)
-
+    print data
     if data == "":
         data = "111"
 

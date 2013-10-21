@@ -35,16 +35,51 @@ $(document).ready(function(){
 
 
 
+
 });
 
+function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    crossDomain: false, // obviates need for sameOrigin test
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type)) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+
+var csrftoken = getCookie('csrftoken');
 function command1(){
 alert("eeee");
 
-$.post( "/ipcmd/",{ip:ip, cmd:cmd, aa:"abcd"},
-    function(data){
-        alert("aaaaaa ");
-    }
-);
+$.post("/ipcmd/",{ip:ip, cmd:cmd, aaa:"992837373hj"}, function(aaa){
+    alter("Data loaded: " + aaa);   
+});
+alert("abc");
+var ee="hello";
+var obj=document.getElementById("output");
+obj.innerHTML =ee;
+
 }
 
     function command(){
