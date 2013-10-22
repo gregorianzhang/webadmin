@@ -71,12 +71,15 @@ function getCookie(name) {
 var csrftoken = getCookie('csrftoken');
 function command1(){
 alert("eeee");
-
-$.post("/ipcmd/",{ip:ip, cmd:cmd, aaa:"992837373hj"}, function(aaa){
-    alter("Data loaded: " + aaa);   
+var ee="";
+$.post("/ipcmd/",
+        {ip:ip, cmd:cmd, aaa:"992837373hj"}, 
+        function(data){
+    alert("Data loaded: " + data);   
+    ee=data;
 });
 alert("abc");
-var ee="hello";
+//var ee="hello";
 var obj=document.getElementById("output");
 obj.innerHTML =ee;
 

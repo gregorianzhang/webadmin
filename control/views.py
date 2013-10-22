@@ -12,14 +12,14 @@ from django.views.decorators.csrf import csrf_protect
 
 @csrf_protect
 def ipcmd(request):
-    data = ""
+    data = {}
     if request.method == 'POST':
         for key in request.POST:
             print key
-            data = request.POST.getlist(key)
+            data[key] = request.POST.getlist(key)
     print data
     if data == "":
-        data = "111"
+        data['aa']=eee
 
     return HttpResponse(data)
 
