@@ -24,6 +24,9 @@ admin.site.register(cmd)
 from control.models import cmd_history
 admin.site.register(cmd_history)
 
+from control.models import menu
+admin.site.register(menu)
+
 
 
 
@@ -44,6 +47,7 @@ urlpatterns = patterns('',
     url(r'^$', 'control.views.home', name='home'),
     url(r'^error/$', error),
     url(r'^ipcmd/$', ipcmd),
+    url(r'^aaa/$', aaa),
 
 
 )

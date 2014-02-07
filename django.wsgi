@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append('/home/roy/PycharmProjects/webadmin/')
+sys.path.append('/data/program/webadmin/')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'webadmin.settings'
 
 import django.core.handlers.wsgi

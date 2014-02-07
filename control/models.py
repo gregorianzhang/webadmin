@@ -54,4 +54,10 @@ class cmd_history(models.Model):
     success = models.SmallIntegerField()
 
 
+class menu(models.Model):
+    item = models.SmallIntegerField()
+    menu = models.CharField(max_length=30)
+    url = models.CharField(max_length=1024)
+    def __unicode__(self):
+        return self.item,self.menu
 
