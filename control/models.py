@@ -59,5 +59,5 @@ class menu(models.Model):
     menu = models.CharField(max_length=30)
     url = models.CharField(max_length=1024)
     def __unicode__(self):
-        return self.item,self.menu
+        return self.item,self.menu,self.url
 
