@@ -73,7 +73,8 @@ def aaa(request):
 def ipcmd(request):
     iplist = machine.objects.all()
     cmdlist = cmd.objects.all()
-    para1 = { "iplist":iplist, "title": "home" ,"cmdlist":cmdlist}
+    menulist = menu.objects.all()
+    para1 = { "iplist":iplist, "title": "home" ,"cmdlist":cmdlist,"menulist":menulist}
     return render_to_response("ipcmd.htm",
                             para1,
                             context_instance=RequestContext(request)
