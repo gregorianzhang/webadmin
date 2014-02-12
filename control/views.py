@@ -23,6 +23,17 @@ def ipcmd1(request):
 
     return HttpResponse(data)
 
+def test(request):
+    if request.method == 'POST':
+        for key in request.POST:
+            print key
+
+
+
+@csrf_protect
+def do(request):
+    return HttpResponse(request)
+
 
 
 @csrf_protect

@@ -49,6 +49,8 @@ urlpatterns = patterns('',
     url(r'^groupcmd/$', groupcmd),
     url(r'^ipcmd/$', ipcmd),
     url(r'^aaa/$', aaa),
+    url(r'^do/$', do),
+    url(r'^test/$', test),
 
 
 )

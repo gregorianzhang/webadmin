@@ -1,4 +1,6 @@
 {# begin container#}
+
+  {% csrf_token %}
     <div class="container">
         <div class="jumbotron">
             <div class="row">
@@ -15,7 +17,7 @@
             {% for cmd in cmdlist %}
             <div class="radio">
 		<label>
-                    <input type="radio" value="{{cmd.cmd}}">{{cmd.cmd}}
+                    <input type="radio" name="cmd" value="{{cmd.cmd}}">{{cmd.cmd}}
 		</label>
             </div>
             {% endfor %}
